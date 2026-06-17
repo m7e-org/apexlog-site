@@ -11,18 +11,13 @@ short version: **your recordings stay on your device. We do not operate any
 server, we have no account system, and we do not collect, transmit, sell, or
 share your recordings.**
 
-> Placeholders in [brackets] must be completed before publishing:
-> [Developer Name] — the individual or company publishing the app.
-> [contact email] — an address users can reach for privacy questions.
-> [jurisdiction] — e.g. "Japan". This policy is provided as a starting point and
-> is not legal advice; have it reviewed for your market if needed.
-
 ---
 
 ## 1. Who is responsible
 
-The app is published by [Developer Name]. For any privacy question, contact
-[contact email].
+The app is published by SANEI DENKI, Y.K. (有限会社山栄電機), 5-1-50
+Kamitsuchidana-minami, Ayase, Kanagawa, Japan. For any privacy question, contact
+support@sanei.m7e.org.
 
 ## 2. What the app processes, and where it is stored
 
@@ -130,6 +125,6 @@ listing.
 ## 13. Contact
 
 Questions about this policy or the app's privacy practices:
-[Developer Name] — [contact email]
+SANEI DENKI, Y.K. — support@sanei.m7e.org
 
-_Governing context: [jurisdiction]._
+_Governing context: Japan._
