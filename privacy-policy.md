@@ -1,5 +1,7 @@
 # Privacy Policy — Apexlog
 
+*[Home](index) · [User Manual](manual) · [日本語](privacy-policy.ja)*
+
 **Effective date:** 2026-06-16
 **Last updated:** 2026-06-16
 

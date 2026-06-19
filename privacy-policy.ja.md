@@ -1,5 +1,7 @@
 # プライバシーポリシー — Apexlog
 
+*[ホーム](index.ja) · [使い方マニュアル](manual.ja) · [English](privacy-policy)*
+
 **発効日:** 2026-06-16
 **最終更新:** 2026-06-16
 
