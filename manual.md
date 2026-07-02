@@ -25,11 +25,36 @@ yourself.
    speed and current G.
 3. Tap **Stop** to finish. The run is saved automatically as an `.ndjson` file.
 
-Each recording captures, from the moment you start:
+Each recording captures, from the moment you start (rates are the defaults —
+see *Recording modes* below):
 
 - **GPS** at ~1&nbsp;Hz — latitude, longitude, altitude, speed, heading, accuracy.
 - **IMU** at ~100&nbsp;Hz — raw accelerometer, gravity-removed (user)
   acceleration, and gyroscope.
+
+### Recording modes: Sport vs Travel
+
+Open **Settings (gear icon) → Recording** to pick a mode:
+
+- **Sport** (default) — the mounted, full-rate mode for track days and rides.
+  You can lower the sensor rates to save battery: **IMU** Off / 25 / 50 /
+  100&nbsp;Hz and **GPS** High / Balanced / Saver. The IMU drives G-force and
+  lean analysis; turn it off and only the GPS track records.
+- **Travel** — a low-power journey logger for trips, with the phone in your
+  pocket or bag. The IMU is off and a GPS point is written **every N metres**
+  rather than every second, so nothing is recorded while you stand still and a
+  full day stays small (a 1-hour commute ≈ 100&nbsp;KB):
+  - **On foot** — walking &amp; trains. A point every ~15&nbsp;m.
+  - **Vehicle** — car &amp; motorbike. A point every ~50&nbsp;m.
+
+  A travel recording **auto-stops after a safety limit** (6/12/24&nbsp;h,
+  configurable) and posts a notification so you notice — reopen the app and
+  start a new recording to continue after a hotel stop or a meal.
+
+> **Travel mode and Pro:** travel logging is free, but keeping it running with
+> the screen locked or the phone pocketed needs **background recording (Pro)**.
+> Without Pro the app warns you when you start: recording will stop as soon as
+> the screen locks.
 
 ### Foreground vs background
 
@@ -75,6 +100,13 @@ Use the timeline slider to scrub, the play button to animate, and the speed menu
 fusing the accelerometer, gyroscope and GPS (a complementary filter), after a
 device→vehicle calibration derived from the ride itself.
 
+**Travel recordings** (no IMU) replace the vehicle gauge with a **journey
+gauge**: an activity icon that follows your speed, plus a trip odometer
+(distance covered so far). *On foot* logs show Break ☕ / Walking 🚶 / Road 🚌 /
+Train 🚆 / Flight ✈️; *Vehicle* logs show Stop 🚦 (standing ≤1&nbsp;min —
+lights, queues) / Break ☕ (parked longer) / Local road 🚗 (&lt;60&nbsp;km/h) /
+Highway 🏎 (faster). The map, speed chart and readouts work as usual.
+
 > The on-device analysis uses a calibration that aligns the phone's arbitrary
 > mounting orientation to the vehicle's axes. The **raw log stores device-frame
 > sensor data** — see below if you want to reproduce the vehicle-frame math
@@ -84,10 +116,27 @@ device→vehicle calibration derived from the ride itself.
 
 ## Exporting {#export}
 
-**Export/share is a Pro feature.** From a recording, use **Share** to send the
-raw `.ndjson` file through the system share sheet — to Files, email, AirDrop,
-another app, your computer, etc. The file is exactly what is described in the
-data-format reference below; nothing is stripped or transformed.
+**Export/share is a Pro feature.** Each recording row has an export button and
+a **⋮ menu** with three ways out:
+
+- **Export GPX / Export KML** — converts the GPS track to a standard map
+  format and opens the share sheet. Your original recording is untouched; the
+  export is a separate file. In **Settings → Export** you can pick which format
+  the one-tap export button uses and whether to embed elevation.
+- **Share raw (NDJSON)** — sends the raw `.ndjson` file exactly as described in
+  the data-format reference below; nothing is stripped or transformed.
+
+### Opening your track in Google Maps / Earth
+
+- **Google My Maps** (view in Google Maps): on
+  [mymaps.google.com](https://mymaps.google.com) create a map → **Import** →
+  choose the exported **KML** (or GPX). The route draws on the map and syncs to
+  the Google Maps app under *Saved → Maps*.
+- **Google Earth**: [earth.google.com](https://earth.google.com) → Projects →
+  **Import KML file** — or just open the KML file on a device with Earth
+  installed.
+- **GPX** also imports into Strava, Garmin Connect, komoot, Ride with GPS and
+  most other GPS tools (as an activity or route, depending on the app).
 
 On a Mac/PC you can also copy the files directly off the device over USB (they
 live in the app's Documents directory).
@@ -116,17 +165,19 @@ Named from the local wall-clock start time, e.g.
 ### `meta` line (first line only)
 
 ```json
-{"type":"meta","app":"apexlog","ver":"0.1.0","startedAt":"2026-06-15T18:12:41.463902+09:00","device":"iPhone16,2","hz":{"imu":100,"gps":1}}
+{"type":"meta","app":"apexlog","ver":"0.2.1","startedAt":"2026-06-15T18:12:41.463902+09:00","device":"iPhone16,2","hz":{"imu":100,"gps":1},"mode":"sport"}
 ```
 
 | Key | Meaning |
 |---|---|
 | `type` | Constant `"meta"` |
 | `app` | Constant `"apexlog"` |
-| `ver` | Log-format / app version (e.g. `"0.1.0"`) |
+| `ver` | Log-format / app version (e.g. `"0.2.1"`) |
 | `startedAt` | Recording start wall-clock, ISO 8601 with local UTC offset |
 | `device` | Device model (e.g. `"iPhone16,2"`, `"Pixel 8"`; `"unknown"` if unavailable) |
-| `hz` | **Requested** sampling rates (configured, not measured) |
+| `hz` | **Requested** sampling rates (configured, not measured). `imu` is `0` when the IMU was disabled (travel mode / IMU Off) — such logs contain no `imu` lines. `gps` is the nominal rate of the chosen tier; `0` means sub-Hz (distance-driven travel presets) |
+| `mode` | *(0.2.1+, optional)* `"sport"` or `"travel"`. Absent in older logs |
+| `preset` | *(0.2.1+, optional)* Travel preset: `"onFoot"` or `"vehicle"` |
 
 ### Sample lines
 
@@ -254,10 +305,10 @@ stop until you grant it again.
 
 | | Free | Pro (one-time) |
 |---|---|---|
-| Recording | Foreground | **＋ Background** |
+| Recording (Sport &amp; Travel modes) | Foreground | **＋ Background** |
 | Saved logs | Latest 3 | **＋ Unlimited** |
-| Map / G-G / attitude playback | ✓ Full | ✓ Full |
-| Share &amp; export | — | **✓** |
+| Map / G-G / attitude / journey playback | ✓ Full | ✓ Full |
+| Share raw &amp; GPX/KML export | — | **✓** |
 
 **Pro is a one-time purchase — ¥1,000 / US$6.99. No subscription.** Restore a
 previous purchase from the paywall (tap **Pro**, then **Restore**).
