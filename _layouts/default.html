@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: 'en' }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if page.title %}{{ page.title }} — {% endif %}Apexlog</title>
+<meta name="description" content="{{ page.description | default: site.description }}">
+<link rel="icon" href="{{ '/assets/img/icon.png' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+</head>
+<body>
+<nav class="site-nav"><div class="in">
+  <img src="{{ '/assets/img/icon_r.png' | relative_url }}" alt="">
+  {% if page.lang == 'ja' %}
+  <a class="brand" href="{{ '/index.ja' | relative_url }}">Apexlog</a>
+  <div class="links">
+    <a href="{{ '/manual.ja' | relative_url }}">マニュアル</a>
+    <a href="{{ '/privacy-policy.ja' | relative_url }}">プライバシー</a>
+    <a href="{{ page.alt_lang | default: '/' | relative_url }}">EN</a>
+  </div>
+  {% else %}
+  <a class="brand" href="{{ '/' | relative_url }}">Apexlog</a>
+  <div class="links">
+    <a href="{{ '/manual' | relative_url }}">Manual</a>
+    <a href="{{ '/privacy-policy' | relative_url }}">Privacy</a>
+    <a href="{{ page.alt_lang | default: '/index.ja' | relative_url }}">日本語</a>
+  </div>
+  {% endif %}
+</div></nav>
+<main class="wrap">
+{{ content }}
+</main>
+<footer><div class="in">
+  <span>© SANEI DENKI, Y.K.</span>
+  <a href="{{ '/privacy-policy' | relative_url }}">Privacy Policy</a>
+  <a href="{{ '/manual' | relative_url }}">Manual</a>
+  <a href="https://apps.apple.com/app/id6781912718">App Store</a>
+  <a href="https://play.google.com/store/apps/details?id=io.apexlog.apexlog">Google Play</a>
+</div></footer>
+</body>
+</html>

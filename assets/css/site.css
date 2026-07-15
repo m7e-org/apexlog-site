@@ -1,0 +1,87 @@
+/* apexlog site — pop palette from the app icon (vivid orange × charcoal navy) */
+:root{
+  --orange:#e74e17; --orange-hi:#ff7a3d; --orange-soft:#ffe3d6;
+  --ink:#1c262e; --ink-soft:#4a5560; --paper:#fff8f4; --card:#ffffff;
+  --radius:22px; --shadow:0 10px 30px rgba(28,38,46,.10);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Hiragino Sans","Noto Sans JP",sans-serif;
+  line-height:1.75;font-size:16.5px}
+a{color:var(--orange);text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%;height:auto}
+
+/* header */
+.site-nav{position:sticky;top:0;z-index:10;background:rgba(255,248,244,.92);
+  backdrop-filter:blur(8px);border-bottom:1px solid #f3e2d8}
+.site-nav .in{max-width:1020px;margin:0 auto;display:flex;align-items:center;
+  gap:14px;padding:10px 20px}
+.site-nav img{width:34px;height:34px;border-radius:9px}
+.site-nav .brand{font-weight:800;font-size:19px;color:var(--ink)}
+.site-nav .links{margin-left:auto;display:flex;gap:18px;font-weight:600;font-size:15px}
+.site-nav .links a{color:var(--ink-soft)}
+.site-nav .links a:hover{color:var(--orange);text-decoration:none}
+
+/* layout */
+.wrap{max-width:1020px;margin:0 auto;padding:0 20px 60px}
+main h1{font-size:34px;line-height:1.3}
+main h2{font-size:26px;margin-top:2.2em;padding-bottom:.25em;
+  border-bottom:3px solid var(--orange-soft)}
+main h3{font-size:20px}
+code{background:#fdeee6;border-radius:6px;padding:.15em .4em;font-size:.9em}
+pre{background:var(--ink);color:#f5f2ef;border-radius:14px;padding:18px 20px;
+  overflow-x:auto;font-size:14px;line-height:1.6}
+pre code{background:none;padding:0;color:inherit}
+table{border-collapse:collapse;width:100%;margin:1.2em 0;background:var(--card);
+  border-radius:14px;overflow:hidden;box-shadow:var(--shadow);font-size:15px}
+th{background:var(--ink);color:#fff;text-align:left;padding:10px 14px}
+td{padding:10px 14px;border-top:1px solid #f6e9e1}
+blockquote{margin:1.2em 0;padding:14px 18px;background:var(--orange-soft);
+  border-left:6px solid var(--orange);border-radius:0 14px 14px 0;color:var(--ink)}
+blockquote p{margin:0}
+
+/* hero */
+.hero{background:linear-gradient(150deg,#ff8a4d 0%,var(--orange) 55%,#c93c0e 100%);
+  color:#fff;border-radius:36px;margin-top:22px}
+.hero .in{max-width:1020px;margin:0 auto;padding:64px 20px 56px;text-align:center}
+.hero img.appicon{width:112px;height:112px;border-radius:26px;
+  box-shadow:0 14px 40px rgba(0,0,0,.28)}
+.hero h1{font-size:44px;margin:.5em 0 .2em;color:#fff;letter-spacing:.5px}
+.hero p.tag{font-size:20px;margin:0 auto 1.6em;max-width:640px;color:#ffe9de;font-weight:600}
+.btn{display:inline-block;padding:13px 26px;border-radius:999px;font-weight:800;
+  font-size:16px;margin:6px 8px;transition:transform .12s ease}
+.btn:hover{text-decoration:none;transform:translateY(-2px)}
+.btn.dark{background:var(--ink);color:#fff}
+.btn.light{background:#fff;color:var(--orange)}
+.hero .fine{font-size:13px;color:#ffd9c6;margin-top:10px}
+
+/* feature cards */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:22px;margin:2em 0}
+.card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);
+  padding:20px 20px 24px;text-align:center}
+.card img.shot{width:100%;max-width:250px;margin:4px auto 14px;display:block}
+.card h3{margin:.2em 0 .35em;font-size:18px}
+.card p{margin:0;font-size:14.5px;color:var(--ink-soft);text-align:left}
+.badge{display:inline-block;background:var(--orange);color:#fff;font-size:12px;
+  font-weight:800;border-radius:999px;padding:2px 12px;margin-bottom:8px;letter-spacing:.5px}
+.badge.navy{background:var(--ink)}
+
+/* news (blog風) */
+.news{display:flex;flex-direction:column;gap:14px;margin:1.5em 0}
+.news .item{background:var(--card);border-radius:16px;box-shadow:var(--shadow);
+  padding:16px 20px;display:flex;gap:16px;align-items:baseline}
+.news .date{flex:0 0 auto;font-weight:800;color:var(--orange);font-size:14px;white-space:nowrap}
+.news .body{font-size:15px}
+.news .body b{color:var(--ink)}
+
+/* footer */
+footer{border-top:1px solid #f3e2d8;margin-top:40px}
+footer .in{max-width:1020px;margin:0 auto;padding:26px 20px;font-size:13.5px;
+  color:var(--ink-soft);display:flex;flex-wrap:wrap;gap:8px 22px}
+@media(max-width:640px){
+  .hero h1{font-size:34px}
+  main h1{font-size:28px}
+}

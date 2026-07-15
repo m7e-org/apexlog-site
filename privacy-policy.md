@@ -1,3 +1,9 @@
+---
+title: Privacy Policy
+lang: en
+alt_lang: /privacy-policy.ja
+---
+
 # Privacy Policy — Apexlog
 
 *[Home](index) · [User Manual](manual) · [日本語](privacy-policy.ja)*

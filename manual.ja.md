@@ -1,3 +1,9 @@
+---
+title: 使い方マニュアル
+lang: ja
+alt_lang: /manual
+---
+
 # Apexlog 使い方マニュアル
 
 *[English](manual) · [ホーム](index.ja) · [プライバシーポリシー](privacy-policy.ja)*

@@ -1,3 +1,9 @@
+---
+title: User Manual
+lang: en
+alt_lang: /manual.ja
+---
+
 # Apexlog User Manual
 
 *[日本語](manual.ja) · [Home](index) · [Privacy Policy](privacy-policy)*
