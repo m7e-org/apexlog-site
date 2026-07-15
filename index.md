@@ -59,7 +59,7 @@ alt_lang: /index.ja
 ## News
 
 <div class="news">
-  <div class="item"><span class="date">2026-07</span><div class="body"><b>v1.0.2 in testing</b> — harsh-event markers with 3 sensitivity profiles, a friendlier session list, and session times everywhere. Coming to the stores soon.</div></div>
+  <div class="item"><span class="date">2026-07</span><div class="body"><b>v1.0.2 released</b> — harsh-event markers with 3 sensitivity profiles, a friendlier session list, and session times everywhere. Out now on both stores!</div></div>
   <div class="item"><span class="date">2026-07</span><div class="body"><b>v1.0.1 released</b> — Travel mode (On foot / Vehicle), GPX/KML export, adjustable sensor rates.</div></div>
   <div class="item"><span class="date">2026-06</span><div class="body"><b>v1.0.0 launched</b> on the App Store and Google Play — record, replay, G-G diagram and fused vehicle attitude.</div></div>
 </div>

@@ -59,7 +59,7 @@ alt_lang: /
 ## ニュース
 
 <div class="news">
-  <div class="item"><span class="date">2026-07</span><div class="body"><b>v1.0.2 テスト中</b> — 急操作マーカー（感度3段階）、見やすくなったセッション一覧、開始・終了時刻の表示。まもなくストアへ。</div></div>
+  <div class="item"><span class="date">2026-07</span><div class="body"><b>v1.0.2 公開</b> — 急操作マーカー（感度3段階）、見やすくなったセッション一覧、開始・終了時刻の表示。両ストアで配信中！</div></div>
   <div class="item"><span class="date">2026-07</span><div class="body"><b>v1.0.1 公開</b> — 旅モード（徒歩／乗り物）、GPX/KML エクスポート、センサーレート調整。</div></div>
   <div class="item"><span class="date">2026-06</span><div class="body"><b>v1.0.0 リリース</b> — App Store・Google Play で公開。記録・再生・G-G ダイアグラム・車両姿勢。</div></div>
 </div>
