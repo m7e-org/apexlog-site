@@ -9,7 +9,7 @@ alt_lang: /privacy-policy.ja
 *[Home](index) · [User Manual](manual) · [日本語](privacy-policy.ja)*
 
 **Effective date:** 2026-06-16
-**Last updated:** 2026-06-16
+**Last updated:** 2026-09-30
 
 Apexlog ("the app", "we", "us") is a telemetry logger that records GPS and
 motion-sensor data while you ride or drive, for you to review and analyze later.
@@ -43,7 +43,17 @@ servers to receive it. It remains on your device until you delete the recording
 or uninstall the app.
 
 We also store, locally, whether you have purchased the "Pro" upgrade (a single
-on/off flag in the app's preferences).
+on/off flag in the app's preferences), and a small summary of each recording
+(distance, time range, a simplified track) used by the calendar view.
+
+**Photos.** To show the photos you took during a recording on its track, the app
+reads photo **capture times** on your device and matches them to the recording's
+time. On iPhone, with your permission, it searches your photo library for photos
+taken during the recording; you can instead allow only selected photos or pick
+photos yourself. On Android, it only sees the photos you pick in the system
+photo picker. Photos you pick are copied, downscaled, into the app's private
+storage; library photos are only referenced, not copied. **Photos are processed
+entirely on your device and are never uploaded.**
 
 ## 3. What we do NOT do
 
@@ -52,6 +62,8 @@ on/off flag in the app's preferences).
 - We do **not** use analytics, advertising, tracking, or crash-reporting SDKs.
 - We do **not** sell or share your personal data.
 - We do **not** receive your location or motion data at all.
+- We do **not** upload, read the contents of, or analyze your photos beyond
+  showing them to you; the app does not use photo location tags.
 
 ## 4. Third-party services
 
@@ -85,6 +97,9 @@ involved in, and do not receive, these transfers. (Share/export is a Pro feature
   navigation) is on screen or the screen is off, e.g. on a motorcycle. Background
   location is used **only** to continue an active recording you started.
 - **Motion & fitness / sensors:** to record accelerometer and gyroscope data.
+- **Photos (iPhone, optional):** asked only when you tap "Find photos from this
+  trip", to show photos taken during a recording on its track. Android needs no
+  photo permission (the system photo picker is used).
 - **Notifications (Android):** to show the ongoing "recording" notification that
   the system requires while recording in the background.
 - **Internet:** to download map tiles during playback and to process purchases.

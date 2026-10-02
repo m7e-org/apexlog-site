@@ -76,8 +76,15 @@ Open **Settings (gear icon) → Recording** to pick a mode:
 
 ## Your recordings (library) {#library}
 
-The home screen lists your recordings, newest first, with file size and start
-time. Tap one to open playback.
+The home screen lists your recordings, newest first: date and start–end time,
+capture mode, duration and distance. Tap one to open playback.
+
+**Calendar view.** The toggle next to **Recordings** switches between the list
+and a **calendar**. Days with recordings are shaded by how far you travelled,
+with the distance underneath and a monthly total below the grid. Tap a day to see
+its sessions, each with a **mini map** of the route, time range, mode, distance and
+top speed; tap a session to open playback. (Apexlog shows *where* you went with
+the map only — it never sends your coordinates to a geocoding service.)
 
 - **Free** keeps your **latest 3** recordings available; older ones are locked
   (not deleted) until you unlock Pro.
@@ -119,6 +126,25 @@ Highway 🏎 (faster). The map, speed chart and readouts work as usual.
 > yourself.
 
 ---
+
+### Photos on the track
+
+Tap the **camera button** at the top-left of the playback map to show the photos
+you took during that recording, pinned where you were when you took them. Tap a
+pin to view the photo; **Show on track** jumps playback to that moment.
+
+Photos are matched by **capture time**, not by their own location tags, so photos
+without GPS data are placed too.
+
+- **iPhone:** tap **Find photos from this trip** and allow access — Apexlog
+  searches your library for photos taken during the recording. With "selected
+  photos" access, use **Allow more photos**; without access, pick photos
+  yourself.
+- **Android:** tap **Add photos** and choose them in the system photo picker
+  (no photo permission needed). Photos taken outside the recording are skipped.
+
+Picked photos are stored as small copies inside the app; library photos are only
+referenced. Nothing is uploaded.
 
 ## Exporting {#export}
 
@@ -192,7 +218,7 @@ Every sample line carries:
 | Key | Meaning | Unit |
 |---|---|---|
 | `t` | Seconds since recording start (monotonic clock) | s |
-| `s` | Stream: `"gps"` or `"imu"` | — |
+| `s` | Stream: `"gps"`, `"imu"` or `"evt"` | — |
 
 **`gps` line:**
 
@@ -223,6 +249,17 @@ sensor's axes** (other fields omitted). A line is one of:
 | `ax` / `ay` / `az` | Raw accelerometer (**gravity included**) | m/s² |
 | `lax` / `lay` / `laz` | User acceleration (**gravity removed**) | m/s² |
 | `gx` / `gy` / `gz` | Gyroscope (angular velocity) | rad/s |
+
+**`evt` lines** (format 0.2.2+) mark recording events:
+
+```json
+{"t":1800.512,"s":"evt","ev":"stop","reason":"user"}
+{"t":42.100,"s":"evt","ev":"gps_error","msg":"..."}
+```
+
+`stop` is the true stop time (`reason`: `user` or `autoDuration`). Travel mode
+writes no GPS line while you stand still, so use the largest `t` in the file, not
+the last fix, as the recording's length. Skip line types you don't know.
 
 Notes:
 
@@ -300,6 +337,9 @@ Pandas tip: read with `pandas.read_json(path, lines=True)`, drop the first
 - **Motion &amp; fitness / sensors:** accelerometer and gyroscope.
 - **Notifications (Android):** the ongoing "recording" notification the OS
   requires for background capture.
+- **Photos (iPhone, optional):** asked only when you tap **Find photos from
+  this trip**. Android uses the system photo picker and needs no photo
+  permission.
 - **Internet:** to download map tiles during playback and to process purchases.
 
 You can revoke any permission in system settings; features that depend on it
@@ -314,6 +354,7 @@ stop until you grant it again.
 | Recording (Sport &amp; Travel modes) | Foreground | **＋ Background** |
 | Saved logs | Latest 3 | **＋ Unlimited** |
 | Map / G-G / attitude / journey playback | ✓ Full | ✓ Full |
+| Calendar view &amp; photos on the track | ✓ | ✓ |
 | Share raw &amp; GPX/KML export | — | **✓** |
 
 **Pro is a one-time purchase — ¥1,000 / US$6.99. No subscription.** Restore a
