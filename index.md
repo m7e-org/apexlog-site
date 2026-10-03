@@ -10,7 +10,7 @@ alt_lang: /index.ja
   <p class="tag">Turn your phone into a vehicle telemetry logger — record GPS + motion, then replay every run on a map with G-force, lean and harsh-event analysis.</p>
   <a class="btn dark" href="https://apps.apple.com/app/id6781912718">App Store</a>
   <a class="btn light" href="https://play.google.com/store/apps/details?id=io.apexlog.apexlog">Google Play</a>
-  <div class="fine">Free to use · Pro is a one-time ¥1,000 / US$6.99 · No subscription, no account, no cloud</div>
+  <div class="fine">Free to use · Pro is a one-time ¥1,000 / US$5.99 · No subscription, no account, no cloud</div>
 </div></div>
 
 ## See it in action
@@ -73,7 +73,7 @@ alt_lang: /index.ja
 | Map / G-G / attitude / journey / events playback | ✓ Full | ✓ Full |
 | Share raw & GPX/KML export | — | **✓** |
 
-**Pro is a one-time purchase — ¥1,000 / US$6.99. No subscription.**
+**Pro is a one-time purchase — ¥1,000 / US$5.99. No subscription.**
 
 ## Get it
 

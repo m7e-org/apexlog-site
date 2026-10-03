@@ -357,5 +357,5 @@ stop until you grant it again.
 | Calendar view &amp; photos on the track | ✓ | ✓ |
 | Share raw &amp; GPX/KML export | — | **✓** |
 
-**Pro is a one-time purchase — ¥1,000 / US$6.99. No subscription.** Restore a
+**Pro is a one-time purchase — ¥1,000 / US$5.99. No subscription.** Restore a
 previous purchase from the paywall (tap **Pro**, then **Restore**).
