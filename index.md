@@ -22,7 +22,6 @@ alt_lang: /index.ja
     <p>Sport runs, drives and journeys side by side — with times, duration and capture mode. No file names, no fuss.</p>
   </div>
   <div class="card">
-    <span class="badge">NEW in 1.0.2</span>
     <img class="shot" src="assets/img/shot_pb_events.png" alt="Harsh-event markers on the map">
     <h3>Harsh-event markers</h3>
     <p>Hard braking 🛑, hard cornering ↪ and hard acceleration ⚡ plotted right on your track. Tap a marker to jump to that moment. Three sensitivities: Strict, Normal, Circuit.</p>
@@ -50,6 +49,8 @@ alt_lang: /index.ja
 - Your ride on an OpenStreetMap track, with a scrubbable timeline.
 - **G-G diagram** (friction circle), switchable **vehicle gauge** — top-down (G + yaw), rear (lean), side (pitch) — or a **journey gauge** for travel logs.
 - **Harsh-event detection:** braking / cornering / acceleration events as tappable map markers.
+- **Calendar view:** days you recorded, shaded by distance — tap a day for its sessions with mini maps.
+- **Photos on the track:** photos you took during a recording, pinned where you took them by capture time. Photos never leave your phone.
 
 **Own your data**
 - Open **NDJSON** format you can parse yourself — see the [data-format reference](manual#data-format-reference).
@@ -59,6 +60,7 @@ alt_lang: /index.ja
 ## News
 
 <div class="news">
+  <div class="item"><span class="date">2026-11</span><div class="body"><b>v1.1.0 released</b> — calendar view of your recording days, photos on the track, and steadier GPS tracks (no more zig-zags or speed spikes). Out now on both stores!</div></div>
   <div class="item"><span class="date">2026-07</span><div class="body"><b>v1.0.2 released</b> — harsh-event markers with 3 sensitivity profiles, a friendlier session list, and session times everywhere. Out now on both stores!</div></div>
   <div class="item"><span class="date">2026-07</span><div class="body"><b>v1.0.1 released</b> — Travel mode (On foot / Vehicle), GPX/KML export, adjustable sensor rates.</div></div>
   <div class="item"><span class="date">2026-06</span><div class="body"><b>v1.0.0 launched</b> on the App Store and Google Play — record, replay, G-G diagram and fused vehicle attitude.</div></div>
@@ -71,6 +73,7 @@ alt_lang: /index.ja
 | Recording (Sport & Travel modes) | Foreground | **＋ Background** |
 | Saved logs | Latest 3 | **＋ Unlimited** |
 | Map / G-G / attitude / journey / events playback | ✓ Full | ✓ Full |
+| Calendar view & photos on the track | ✓ | ✓ |
 | Share raw & GPX/KML export | — | **✓** |
 
 **Pro is a one-time purchase — ¥1,000 / US$5.99. No subscription.**
