@@ -22,6 +22,18 @@ alt_lang: /index.ja
     <p>Sport runs, drives and journeys side by side — with times, duration and capture mode. No file names, no fuss.</p>
   </div>
   <div class="card">
+    <span class="badge">NEW in 1.1.0</span>
+    <img class="shot" src="assets/img/shot_calendar.png" alt="Calendar view">
+    <h3>Calendar view</h3>
+    <p>See the days you recorded at a glance, shaded by distance. Tap a day for its sessions, each with a mini map of the route.</p>
+  </div>
+  <div class="card">
+    <span class="badge">NEW in 1.1.0</span>
+    <img class="shot" src="assets/img/shot_pb_photos.png" alt="Photos pinned on the track">
+    <h3>Photos on the track</h3>
+    <p>Photos you took during a trip are pinned where you took them, matched by capture time. Tap one to view it and jump to that moment. Photos never leave your phone.</p>
+  </div>
+  <div class="card">
     <img class="shot" src="assets/img/shot_pb_events.png" alt="Harsh-event markers on the map">
     <h3>Harsh-event markers</h3>
     <p>Hard braking 🛑, hard cornering ↪ and hard acceleration ⚡ plotted right on your track. Tap a marker to jump to that moment. Three sensitivities: Strict, Normal, Circuit.</p>

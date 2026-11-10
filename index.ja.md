@@ -22,6 +22,18 @@ alt_lang: /
     <p>スポーツ走行も、ドライブも、旅も一つのリストに。日時・所要時間・記録モードで並び、ファイル名は出てきません。</p>
   </div>
   <div class="card">
+    <span class="badge">NEW in 1.1.0</span>
+    <img class="shot" src="assets/img/shot_calendar.png" alt="カレンダー表示">
+    <h3>カレンダー表示</h3>
+    <p>記録した日が、走った距離に応じた色でひと目でわかります。日付をタップすると、その日のセッションをルートのミニ地図付きで一覧。</p>
+  </div>
+  <div class="card">
+    <span class="badge">NEW in 1.1.0</span>
+    <img class="shot" src="assets/img/shot_pb_photos.png" alt="軌跡上の写真">
+    <h3>軌跡上の写真</h3>
+    <p>旅の途中で撮った写真を、撮影時刻から撮った場所にピン表示。タップで写真を見て、その瞬間へジャンプ。写真が端末の外に出ることはありません。</p>
+  </div>
+  <div class="card">
     <img class="shot" src="assets/img/shot_pb_events.png" alt="急操作マーカー">
     <h3>急ブレーキ・急ハンドルを地図に</h3>
     <p>急ブレーキ🛑・急ハンドル↪・急発進⚡を走行軌跡の上にプロット。マーカーをタップするとその瞬間へジャンプ。感度は Strict / Normal / Circuit の3段階。</p>
